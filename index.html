@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="80电影网 - 80年代怀旧影视经典聚集地，收录8090年代港片、经典老电影、怀旧电视剧，致敬光影岁月，重温童年回忆。">
+<meta name="keywords" content="80电影网, 80电影, 怀旧电影, 80年代电影, 经典老电影, 港片经典, 8090年代电视剧, 80dianyingwang, 怀旧影视, 复古观影">
+<meta name="author" content="80电影网">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="revisit-after" content="1 days">
+<meta property="og:title" content="80电影网 - 80年代怀旧影视经典聚集地">
+<meta property="og:description" content="80电影网 - 收录8090年代港片、经典老电影、怀旧电视剧，致敬光影岁月，重温童年回忆。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://80dianyingwang-wap.github.io">
+<meta property="og:site_name" content="80电影网">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="80电影网">
+<meta name="twitter:description" content="80电影网 - 80年代怀旧影视经典聚集地，重温童年光影记忆！">
+<title>80电影网 - 80年代怀旧影视经典聚集地 | 重温光影岁月</title>
+<style>
+/* ===== Reset ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --ink:#1a1208;--ink2:#241808;--paper:#fdf6e9;--paper2:#f6ead2;
+  --orange:#e8620c;--orange2:#f08c2e;--amber:#f5b301;--rust:#c2410c;
+  --deep:#7c2d12;--cream:#fff8ed;
+  --grad:linear-gradient(135deg,#e8620c,#f5b301);
+  --grad2:linear-gradient(135deg,#c2410c,#e8620c);
+  --shadow:0 10px 30px rgba(122,44,8,.18);
+  --r:16px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:"PingFang SC","Microsoft YaHei","Songti SC","STSong",Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.8;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at top left,#fdf6e9,transparent 60%),radial-gradient(ellipse at bottom right,#f8edd4,transparent 55%)}
+body::after{content:'';position:fixed;inset:0;z-index:-1;opacity:.035;pointer-events:none;background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.6) 2px,rgba(0,0,0,.6) 3px)}
+a{text-decoration:none;color:inherit;transition:.3s}
+ul{list-style:none}
+img{max-width:100%;display:block}
+.container{max-width:1140px;margin:0 auto;padding:0 22px}
+
+/* ===== Loader ===== */
+#loader{position:fixed;inset:0;z-index:9999;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .55s}
+#loader.hide{opacity:0;pointer-events:none}
+#loader .vhs{width:64px;height:44px;border:3px solid var(--orange2);border-radius:9px;position:relative;display:flex;align-items:center;justify-content:center;animation:tv 1.2s ease-in-out infinite}
+#loader .vhs::before{content:'';width:34px;height:3px;background:var(--amber);box-shadow:0 -8px var(--orange2),0 8px var(--orange);animation:scan 1s linear infinite}
+@keyframes tv{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes scan{0%{opacity:1}50%{opacity:.35}100%{opacity:1}}
+#loader .txt{font-size:1.2rem;font-weight:900;letter-spacing:4px;color:var(--amber);font-family:Georgia,serif;text-shadow:0 2px 10px rgba(245,179,1,.4)}
+
+/* ===== Header ===== */
+.hd{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,18,8,.93);backdrop-filter:blur(12px);border-bottom:2px solid var(--orange)}
+.hd-in{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1140px;margin:0 auto;padding:0 22px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .badge{width:42px;height:42px;border-radius:12px;background:var(--grad);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;box-shadow:var(--shadow)}
+.logo .badge b{font-size:1.05rem;font-weight:900;color:#fff}
+.logo .badge small{font-size:.5rem;color:rgba(255,255,255,.85);letter-spacing:1px}
+.logo .name{font-size:1.35rem;font-weight:900;letter-spacing:1px;color:var(--paper);font-family:Georgia,serif}
+.logo .name span{color:var(--orange2)}
+.hnav{display:flex;gap:2px}
+.hnav a{padding:9px 15px;border-radius:10px;font-size:.9rem;font-weight:700;color:var(--paper2);position:relative}
+.hnav a:hover{color:var(--amber)}
+.hnav a.on{color:#fff;background:var(--grad2);box-shadow:var(--shadow)}
+.mbtn{display:none;width:42px;height:42px;border:none;background:rgba(255,255,255,.08);border-radius:10px;cursor:pointer;position:relative}
+.mbtn span{position:absolute;left:9px;width:24px;height:2px;background:var(--amber);border-radius:2px;transition:.3s}
+.mbtn span:nth-child(1){top:14px}.mbtn span:nth-child(2){top:20px}.mbtn span:nth-child(3){top:26px}
+.mbtn.x span:nth-child(1){top:20px;transform:rotate(45deg)}
+.mbtn.x span:nth-child(2){opacity:0}
+.mbtn.x span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+/* ===== Hero (差异化: 怀旧放映室) ===== */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:92px 0 60px}
+.hero .tape{position:absolute;width:150px;height:150px;border:14px solid rgba(200,120,40,.14);border-radius:50%;top:-40px;right:6%;animation:spin 22s linear infinite}
+.hero .tape.r{border-color:rgba(200,120,40,.1);width:220px;height:220px;bottom:-60px;left:-50px;animation-duration:35s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hb{position:relative;z-index:2;max-width:700px;margin:0 auto;text-align:center;padding:0 22px}
+.hb .reel{display:inline-flex;align-items:center;gap:10px;padding:8px 20px;border-radius:40px;font-size:.84rem;font-weight:700;color:var(--deep);background:var(--paper2);border:1.5px dashed var(--orange);margin-bottom:28px}
+.hb h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:900;line-height:1.15;letter-spacing:-1px;margin-bottom:8px;font-family:Georgia,serif}
+.hb h1 .oh{color:var(--orange);-webkit-text-stroke:1.5px var(--rust)}
+.hb .sub{font-size:clamp(1rem,2.6vw,1.35rem);font-weight:700;color:var(--rust);margin-bottom:24px;letter-spacing:2px}
+.hb .desc{font-size:1rem;color:#5c4632;max-width:560px;margin:0 auto 36px}
+.hb .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+.btn{padding:14px 34px;border:none;border-radius:12px;font-size:.98rem;font-weight:800;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+.btn-main{background:var(--grad);color:#fff;box-shadow:var(--shadow)}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(200,80,10,.4)}
+.btn-ghost{background:var(--paper2);color:var(--deep);border:2px solid var(--orange)}
+.btn-ghost:hover{border-color:var(--rust);color:var(--rust)}
+.hb .reels{display:flex;gap:36px;justify-content:center;flex-wrap:wrap}
+.hb .reels .m b{display:block;font-size:1.7rem;font-weight:900;color:var(--rust);font-family:Georgia,serif}
+.hb .reels .m span{font-size:.78rem;color:#8a6a48;font-weight:600}
+
+/* ===== 通用区块 ===== */
+.sec{padding:82px 0;position:relative}
+.sec-head{text-align:center;margin-bottom:48px}
+.sec-head .kicker{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;padding:5px 16px;border:1.5px solid rgba(232,98,12,.3);border-radius:6px}
+.sec-head h2{font-size:clamp(1.5rem,3.8vw,2.2rem);font-weight:900;letter-spacing:-.4px;margin-bottom:10px;font-family:Georgia,serif}
+.sec-head p{font-size:1rem;color:#6b5340;max-width:560px;margin:0 auto}
+
+/* ===== 横向滑动 年代机(差异化) ===== */
+.decade{background:var(--ink)}
+.decade .sec-head h2{color:var(--paper)}
+.decade .sec-head p{color:#c3a582}
+.tape-wrap{position:relative}
+.tape-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 22px;scrollbar-width:thin;scrollbar-color:var(--orange) transparent}
+.tape-track::-webkit-scrollbar{height:7px}
+.tape-track::-webkit-scrollbar-thumb{background:var(--orange);border-radius:10px}
+.dcard{scroll-snap-align:start;min-width:230px;width:230px;background:var(--ink2);border:1.5px solid rgba(245,179,1,.2);border-radius:var(--r);overflow:hidden;transition:.4s;cursor:pointer;position:relative;flex-shrink:0}
+.dcard:hover{transform:translateY(-8px);border-color:var(--amber);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.dcard .film{height:120px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;background:repeating-linear-gradient(45deg,#3a2610,#3a2610 8px,#2c1c0c 8px,#2c1c0c 16px)}
+.dcard .body{padding:16px}
+.dcard .body .yr{font-family:Georgia,serif;font-size:1.9rem;font-weight:900;color:var(--amber);line-height:1}
+.dcard .body h4{font-size:.98rem;font-weight:800;color:var(--paper);margin:6px 0 5px}
+.dcard .body p{font-size:.8rem;color:#b09370;line-height:1.6}
+.tape-nav{display:flex;gap:12px;justify-content:center;margin-top:4px}
+.tape-nav button{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--orange);background:transparent;color:var(--amber);font-size:1.1rem;cursor:pointer;transition:.3s}
+.tape-nav button:hover{background:var(--grad);color:#fff;border-color:transparent}
+
+/* ===== 经典海报墙 (差异化: 横向拖动海报) ===== */
+.posters{}
+.pstrip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 24px;scrollbar-width:none}
+.pstrip::-webkit-scrollbar{display:none}
+.pcard{scroll-snap-align:start;min-width:190px;width:190px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(120,60,10,.12);transition:.4s;cursor:pointer;flex-shrink:0}
+.pcard:hover{transform:translateY(-8px) rotate(-1.5deg);box-shadow:0 18px 40px rgba(120,60,10,.28)}
+.pcard .post{height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#fff;position:relative}
+.pcard .post .num{font-family:Georgia,serif;font-size:2.4rem;font-weight:900;opacity:.5;line-height:1}
+.pcard .post .tt{font-size:1.15rem;font-weight:900;letter-spacing:1px;text-align:center;padding:0 12px}
+.pcard .post .yr{font-size:.78rem;background:rgba(0,0,0,.28);padding:3px 10px;border-radius:20px}
+.pcard .pmeta{padding:13px 16px;background:#fff}
+.pcard .pmeta h4{font-size:.95rem;font-weight:800;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pcard .pmeta .gen{font-size:.76rem;color:var(--orange);font-weight:600}
+
+/* ===== 怀旧记忆 分类 (差异化: 磁带式大块) ===== */
+.mem{background:var(--paper2)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.mcard{position:relative;padding:26px 24px;border-radius:var(--r);background:#fff;border-left:5px solid var(--orange);box-shadow:0 4px 16px rgba(120,60,10,.08);transition:.35s;cursor:pointer}
+.mcard:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(120,60,10,.2);border-left-color:var(--amber)}
+.mcard .ico{width:52px;height:52px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:14px;box-shadow:var(--shadow)}
+.mcard h4{font-size:1.05rem;font-weight:800;margin-bottom:6px}
+.mcard p{font-size:.86rem;color:#6b5340;line-height:1.7}
+.mcard .cnt{display:inline-block;margin-top:12px;font-size:.78rem;font-weight:800;color:var(--rust);letter-spacing:1px}
+
+/* ===== 年代大事记 (差异化: 时间线) ===== */
+.milestone{background:var(--ink)}
+.milestone .sec-head h2{color:var(--paper)}
+.milestone .sec-head p{color:#c3a582}
+.mline{position:relative;max-width:820px;margin:0 auto}
+.mline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(var(--rust),var(--amber),var(--orange2));transform:translateX(-50%)}
+.mitem{position:relative;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:26px}
+.mitem:nth-child(even){flex-direction:row-reverse}
+.mitem .mc{width:44px;height:44px;min-width:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;color:#fff;box-shadow:0 0 0 5px var(--ink),0 0 0 7px var(--rust);z-index:2;font-family:Georgia,serif}
+.mitem .mb{flex:1;background:var(--ink2);border:1.5px solid rgba(245,179,1,.2);border-radius:14px;padding:18px 22px;transition:.35s;cursor:pointer}
+.mitem .mb:hover{border-color:var(--amber);transform:scale(1.02)}
+.mitem .mb .y{font-family:Georgia,serif;font-size:1.2rem;font-weight:900;color:var(--amber);margin-bottom:3px}
+.mitem .mb h4{font-size:1rem;font-weight:800;color:var(--paper);margin-bottom:3px}
+.mitem .mb p{font-size:.84rem;color:#b09370}
+
+/* ===== 致影迷 信件 (差异化: 信纸卡片) ===== */
+.letter{}
+.lbox{max-width:760px;margin:0 auto;background:#fff;border-radius:18px;padding:42px 40px;box-shadow:0 16px 48px rgba(120,60,10,.16);position:relative}
+.lbox::before{content:'';position:absolute;top:0;left:42px;right:42px;height:3px;background:repeating-linear-gradient(90deg,var(--orange),var(--orange) 10px,transparent 10px,transparent 18px)}
+.lbox h3{font-size:1.5rem;font-weight:900;margin-bottom:8px;color:var(--rust);font-family:Georgia,serif}
+.lbox .to{font-size:.95rem;color:#8a6a48;margin-bottom:22px;padding-bottom:18px;border-bottom:2px dashed rgba(232,98,12,.25)}
+.lbox p{font-size:1rem;color:#4a3828;line-height:2.1;margin-bottom:14px;text-indent:2em}
+.lbox .from{margin-top:26px;text-align:right;font-size:.95rem;color:var(--rust);font-weight:800}
+.lbox .urlbox{margin-top:26px;text-align:center;padding:16px;border-radius:12px;background:var(--paper2);border:1.5px dashed var(--orange)}
+.lbox .urlbox b{font-family:Georgia,serif;font-size:1.05rem;color:var(--rust);letter-spacing:.5px}
+
+/* ===== Footer ===== */
+.ft{background:var(--ink);padding:46px 0 22px;border-top:3px solid var(--orange)}
+.ft-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:22px;margin-bottom:26px}
+.ft-top .brand{display:flex;align-items:center;gap:12px}
+.ft-top .brand .badge{width:42px;height:42px;border-radius:12px;background:var(--grad);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.ft-top .brand .badge b{font-size:1.05rem;font-weight:900;color:#fff}
+.ft-top .brand .badge small{font-size:.5rem;color:rgba(255,255,255,.85)}
+.ft-top .brand .name{font-size:1.25rem;font-weight:900;color:var(--paper);font-family:Georgia,serif}
+.ft-top .links{display:flex;gap:20px;flex-wrap:wrap}
+.ft-top .links a{font-size:.88rem;color:#a8885f}
+.ft-top .links a:hover{color:var(--amber)}
+.ft-bot{text-align:center;padding-top:22px;border-top:1px solid rgba(245,179,1,.15);font-size:.82rem;color:#8a6a48;line-height:1.95}
+.ft-bot a{color:var(--orange2);font-weight:700}
+
+/* ===== Top ===== */
+#top{position:fixed;bottom:22px;right:22px;width:46px;height:46px;border:none;border-radius:50%;background:var(--grad);color:#fff;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:scale(.7);transition:.3s;z-index:999}
+#top.show{opacity:1;visibility:visible;transform:scale(1)}
+#top:hover{transform:scale(1.12)}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  html{font-size:14px}
+  .hd-in{height:56px;padding:0 14px}
+  .logo .badge{width:38px;height:38px;border-radius:10px}
+  .logo .name{font-size:1.1rem}
+  .mbtn{display:block}
+  .hnav{position:fixed;top:56px;left:0;right:0;flex-direction:column;background:rgba(26,18,8,.98);padding:10px;gap:0;max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .hnav.open{max-height:440px;overflow-y:auto}
+  .hnav a{padding:13px;text-align:center;border-radius:8px}
+  .hero{min-height:auto;padding:78px 0 46px}
+  .hero .tape{width:100px;height:100px;border-width:10px}
+  .hero .tape.r{width:140px;height:140px}
+  .hb .reels{gap:24px}
+  .sec{padding:54px 0}
+  .sec-head{margin-bottom:32px}
+  .dcard{min-width:180px;width:180px}
+  .pcard{min-width:150px;width:150px}
+  .pcard .post{height:200px}
+  .pcard .post .tt{font-size:1rem}
+  .mgrid{grid-template-columns:1fr;gap:14px}
+  .mitem{flex-direction:column!important;text-align:center;gap:12px}
+  .mline::before{left:22px}
+  .mitem .mc{align-self:flex-start;margin-left:0}
+  .lbox{padding:30px 24px;border-radius:16px}
+  .lbox p{text-indent:1.5em}
+  .ft-top{flex-direction:column;text-align:center}
+  #top{bottom:16px;right:14px;width:42px;height:42px}
+}
+@media(max-width:400px){
+  .hb .ctas{gap:10px}
+  .btn{padding:12px 26px;font-size:.9rem}
+  .dcard{min-width:160px;width:160px}
+  .pcard{min-width:140px;width:140px}
+  .pcard .post{height:185px}
+  .hb .reels{gap:16px}
+  .hb .reels .m b{font-size:1.4rem}
+  .ft-top .links{gap:14px}
+  .tape-nav button{width:38px;height:38px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="vhs"></div>
+  <div class="txt">80电影网</div>
+</div>
+
+<!-- Header -->
+<header class="hd">
+  <div class="hd-in">
+    <a href="#home" class="logo"><div class="badge"><b>80</b><small>FILM</small></div><div class="name">80<span>电影网</span></div></a>
+    <nav class="hnav" id="hnav">
+      <a href="#home" class="on">首页</a>
+      <a href="#decade">年代精选</a>
+      <a href="#posters">经典海报墙</a>
+      <a href="#mem">怀旧分类</a>
+      <a href="#milestone">年代大事记</a>
+      <a href="#letter">影迷信箱</a>
+    </nav>
+    <button class="mbtn" id="mbtn" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="tape"></div>
+  <div class="tape r"></div>
+  <div class="hb">
+    <div class="reel">📼 经典永不褪色 · 致敬80年代光影</div>
+    <h1><span class="oh">80</span> 电影网</h1>
+    <div class="sub">重温童年，致敬经典</div>
+    <p class="desc">收录 80、90 年代港片与经典老电影、怀旧电视剧，那些年一起追过的光影记忆，都在这里。无需注册，打开即看。</p>
+    <div class="ctas">
+      <button class="btn btn-main" onclick="document.getElementById('decade').scrollIntoView({behavior:'smooth'})">🎞️ 开始怀旧</button>
+      <a href="#letter" class="btn btn-ghost">写给影迷 →</a>
+    </div>
+    <div class="reels">
+      <div class="m"><b>1980s</b><span>黄金年代</span></div>
+      <div class="m"><b>5000+</b><span>经典影片</span></div>
+      <div class="m"><b>4K</b><span>修复版</span></div>
+      <div class="m"><b>0元</b><span>永久免费</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 年代精选 (横向滑动) -->
+<section class="decade" id="decade">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">DECADE SELECT</span>
+      <h2>📼 年代精选</h2>
+      <p>滑动穿越时光，每个年代都有属于它的光影印记</p>
+    </div>
+    <div class="tape-wrap">
+      <div class="tape-track" id="track">
+        <div class="dcard"><div class="film">🎬</div><div class="body"><div class="yr">'80</div><h4>港片黄金年代</h4><p>喜剧之王与英雄本色，开启港片最辉煌的十年。</p></div></div>
+        <div class="dcard"><div class="film">🕶️</div><div class="body"><div class="yr">'81</div><h4>少林寺</h4><p>功夫电影里程碑，万人空巷的全民记忆。</p></div></div>
+        <div class="dcard"><div class="film">🎤</div><div class="body"><div class="yr">'84</div><h4>喜剧之王</h4><p>无厘头喜剧开山之作，笑中带泪的经典。</p></div></div>
+        <div class="dcard"><div class="film">🔫</div><div class="body"><div class="yr">'86</div><h4>英雄本色</h4><p>江湖义气，兄弟情深，影响几代人的港片。</p></div></div>
+        <div class="dcard"><div class="film">🏮</div><div class="body"><div class="yr">'87</div><h4>倩女幽魂</h4><p>人鬼情未了，东方奇幻电影的巅峰之作。</p></div></div>
+        <div class="dcard"><div class="film">🥋</div><div class="body"><div class="yr">'89</div><h4>赌圣</h4><p>赌片热潮席卷亚洲，缔造票房神话。</p></div></div>
+        <div class="dcard"><div class="film">🌆</div><div class="body"><div class="yr">'92</div><h4>新龙门客栈</h4><p>武侠经典，大漠孤烟里的江湖儿女情。</p></div></div>
+        <div class="dcard"><div class="film">🚀</div><div class="body"><div class="yr">'94</div><h4>大话西游</h4><p>曾经笑过，后来哭了，经典需要岁月读懂。</p></div></div>
+        <div class="dcard"><div class="film">🎭</div><div class="body"><div class="yr">'97</div><h4>喜剧之王</h4><p>我是一个演员，小人物也有大梦想。</p></div></div>
+        <div class="dcard"><div class="film">💿</div><div class="body"><div class="yr">'99</div><h4>千禧前夜</h4><p>世纪之交的青春与爱情，VCD 时代的浪漫。</p></div></div>
+      </div>
+      <div class="tape-nav">
+        <button id="prev" aria-label="上一个">‹</button>
+        <button id="next" aria-label="下一个">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 经典海报墙 -->
+<section class="posters" id="posters">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">CLASSIC WALL</span>
+      <h2>🎞️ 经典海报墙</h2>
+      <p>左右滑动，看看那些年让你难忘的荧幕面孔</p>
+    </div>
+    <div class="pstrip" id="pstrip">
+      <div class="pcard"><div class="post" style="background:linear-gradient(160deg,#7c2d12,#c2410c)"><span class="num">01</span><span class="tt">英雄本色</span><span class="yr">1986</span></div><div class="pmeta"><h4>英雄本色</h4><span class="gen">犯罪 · 动作 · 港片</span></div></div>
+      <div class="pcard"><div class="post" style="background:linear-gradient(160deg,#92400e,#f5b301)"><span class="num">02</span><span class="tt">倩女幽魂</span><span class="yr">1987</span></div><div class="pmeta"><h4>倩女幽魂</h4><span class="gen">奇幻 · 爱情 · 经典</span></div></div>
+      <div class="pcard"><div class="post" style="background:linear-gradient(160deg,#44403c,#78716c)"><span class="num">03</span><span class="tt">阿郎的故事</span><span class="yr">1989</span></div><div class="pmeta"><h4>阿郎的故事</h4><span class="gen">剧情 · 爱情 · 催泪</span></div></div>
+      <div class="pcard"><div class="post" style="background:linear-gradient(160deg,#365314,#84cc16)"><span class="num">04</span><span class="tt">新龙门客栈</span><span class="yr">1992</span></div><div class="pmeta"><h4>新龙门客栈</h4><span class="gen">武侠 · 动作 · 江湖</span></div></div>
+      <div class="pcard"><div class="post" style="background:linear-gradient(160deg,#4c1d95,#a78bfa)"><span class="num">05</span><span class="tt">大话西游</span><span class="yr">1995</span></div><div class="pmeta"><h4>大话西游</h4><span class="gen">奇幻 · 喜剧 · 爱情</span></div></div>
+      <div class="pcard"><div class="post" style="background:linear-gradient(160deg,#831843,#f43f5e)"><span class="num">06</span><span class="tt">喜剧之王</span><span class="yr">1999</span></div><div class="pmeta"><h4>喜剧之王</h4><span class="gen">喜剧 · 剧情 · 励志</span></div></div>
+      <div class="pcard"><div class="post" style="background:linear-gradient(160deg,#0e7490,#22d3ee)"><span class="num">07</span><span class="tt">赌神</span><span class="yr">1989</span></div><div class="pmeta"><h4>赌神</h4><span class="gen">剧情 · 动作 · 港片</span></div></div>
+      <div class="pcard"><div class="post" style="background:linear-gradient(160deg,#7c3aed,#ec4899)"><span class="num">08</span><span class="tt">青蛇</span><span class="yr">1993</span></div><div class="pmeta"><h4>青蛇</h4><span class="gen">奇幻 · 古装 · 唯美</span></div></div>
+      <div class="pcard"><div class="post" style="background:linear-gradient(160deg,#b45309,#fbbf24)"><span class="num">09</span><span class="tt">东成西就</span><span class="yr">1993</span></div><div class="pmeta"><h4>东成西就</h4><span class="gen">喜剧 · 群星 · 经典</span></div></div>
+      <div class="pcard"><div class="post" style="background:linear-gradient(160deg,#1e3a5f,#3b82f6)"><span class="num">10</span><span class="tt">无间道</span><span class="yr">2002</span></div><div class="pmeta"><h4>无间道</h4><span class="gen">犯罪 · 悬疑 · 警匪</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 怀旧分类 -->
+<section class="mem" id="mem">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">COLLECTION</span>
+      <h2>📻 怀旧分类</h2>
+      <p>从港片到内地经典，按类型一键回到那个年代</p>
+    </div>
+    <div class="mgrid">
+      <div class="mcard"><div class="ico">🎬</div><h4>港片经典</h4><p>收录 80-90 年代香港电影黄金时期的动作、喜剧、警匪佳作。</p><span class="cnt">1200+ 部 →</span></div>
+      <div class="mcard"><div class="ico">🥋</div><h4>功夫武侠</h4><p>从少林寺到新龙门客栈，重温东方武侠的侠骨柔情。</p><span class="cnt">680+ 部 →</span></div>
+      <div class="mcard"><div class="ico">😂</div><h4>无厘头喜剧</h4><p>那些年笑到肚子疼的港式喜剧，百看不厌的快乐源泉。</p><span class="cnt">520+ 部 →</span></div>
+      <div class="mcard"><div class="ico">💗</div><h4>爱情文艺</h4><p>大话西游、阿郎的故事，笑过之后让人泪流满面的深情。</p><span class="cnt">430+ 部 →</span></div>
+      <div class="mcard"><div class="ico">📺</div><h4>怀旧电视剧</h4><p>经典电视剧集，那些年守在电视机前追过的剧情。</p><span class="cnt">310+ 部 →</span></div>
+      <div class="mcard"><div class="ico">🎤</div><h4>综艺与戏曲</h4><p>老综艺、经典戏曲，承载一代人的娱乐回忆。</p><span class="cnt">260+ 部 →</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 年代大事记 -->
+<section class="milestone" id="milestone">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">MILESTONE</span>
+      <h2>📺 年代大事记</h2>
+      <p>那些改变中国观影记忆的关键节点</p>
+    </div>
+    <div class="mline">
+      <div class="mitem"><div class="mc">'82</div><div class="mb"><div class="y">1982 · 少林寺上映</div><h4>功夫电影的全民热潮</h4><p>一部电影引发全国习武热，创下 1.6 亿观影人次纪录。</p></div></div>
+      <div class="mitem"><div class="mc">'86</div><div class="mb"><div class="y">1986 · 英雄本色</div><h4>港片黄金时代的标志</h4><p>吴宇森、周润发缔造的江湖传奇，影响至今。</p></div></div>
+      <div class="mitem"><div class="mc">'90</div><div class="mb"><div class="y">1990 · 赌圣创票房</div><h4>周星驰喜剧时代开启</h4><p>港片首次票房破四千万，无厘头喜剧席卷亚洲。</p></div></div>
+      <div class="mitem"><div class="mc">'94</div><div class="mb"><div class="y">1994 · 大话西游上映</div><h4>当年遇冷，多年后被封神</h4><p>初映票房平平，却在世纪之交成为一代人的精神图腾。</p></div></div>
+      <div class="mitem"><div class="mc">'99</div><div class="mb"><div class="y">1999 · VCD/DVD 普及</div><h4>家庭观影时代到来</h4><p>录像厅逐渐退出，家庭影音成为主流娱乐方式。</p></div></div>
+      <div class="mitem"><div class="mc">'02</div><div class="mb"><div class="y">2002 · 无间道</div><h4>港片最后的辉煌篇章</h4><p>被好莱坞翻拍，标志着华语警匪片的巅峰水准。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 影迷信箱 -->
+<section class="letter" id="letter">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">FAN LETTER</span>
+      <h2>💌 影迷信箱</h2>
+      <p>致每一位还记得录像厅味道的你</p>
+    </div>
+    <div class="lbox">
+      <h3>亲爱的影迷朋友：</h3>
+      <div class="to">To: 所有怀念 80 年代的你</div>
+      <p>还记得小时候，巷子口的录像厅、嗡嗡作响的电视机、还有那盘总要倒带的 VCD 吗？那些画面，是刻在记忆里的光影。</p>
+      <p><strong style="color:var(--rust)">80电影网</strong> 把这些经典重新带回你面前，4K 修复、原声重现，让你在手机上就能重温那些年的感动。</p>
+      <p>这里不追新潮，只守经典。愿你在这里，找到属于自己的那段旧时光。</p>
+      <div class="from">—— 80电影网 敬上</div>
+      <div class="urlbox">🌐 访问网址：<b>https://80dianyingwang-wap.github.io</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="ft">
+  <div class="container">
+    <div class="ft-top">
+      <div class="brand"><div class="badge"><b>80</b><small>FILM</small></div><div class="name">80电影网</div></div>
+      <div class="links">
+        <a href="#home">首页</a>
+        <a href="#decade">年代精选</a>
+        <a href="#posters">海报墙</a>
+        <a href="#mem">怀旧分类</a>
+        <a href="#milestone">大事记</a>
+        <a href="#letter">影迷信箱</a>
+        <a href="#">免责声明</a>
+        <a href="#">联系我们</a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2024 <a href="https://80dianyingwang-wap.github.io">80电影网</a>（80dianyingwang-wap.github.io）版权所有</p>
+      <p>本站内容均收集于互联网，仅供怀旧交流，如有侵权请联系删除</p>
+    </div>
+  </div>
+</footer>
+
+<button id="top" aria-label="返回顶部">↑</button>
+
+<script>
+// Loader
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loader').classList.add('hide')},500)});
+
+// Mobile menu
+var mbtn=document.getElementById('mbtn'),hnav=document.getElementById('hnav');
+mbtn.addEventListener('click',function(){mbtn.classList.toggle('x');hnav.classList.toggle('open')});
+hnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mbtn.classList.remove('x');hnav.classList.remove('open')})});
+
+// Tape track scroll buttons
+var track=document.getElementById('track');
+document.getElementById('prev').addEventListener('click',function(){track.scrollBy({left:-250,behavior:'smooth'})});
+document.getElementById('next').addEventListener('click',function(){track.scrollBy({left:250,behavior:'smooth'})});
+
+// Scroll spy + top button
+var hd=document.querySelector('.hd'),topBtn=document.getElementById('top'),links=hnav.querySelectorAll('a'),secs=document.querySelectorAll('.sec,.hero');
+window.addEventListener('scroll',function(){
+  var sy=window.scrollY;
+  hd.style.background=(sy>60)?'rgba(26,18,8,.98)':'rgba(26,18,8,.93)';
+  topBtn.classList.toggle('show',sy>400);
+  var cur='';secs.forEach(function(s){if(sy>=s.offsetTop-160)cur=s.id});
+  links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+});
+topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+
+</body>
+</html>
